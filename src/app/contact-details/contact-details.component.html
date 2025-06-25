@@ -1,0 +1,62 @@
+
+@if(contactForm!=null) {
+
+<div id="full-cover-background" class="flex h-screen justify-center items-center bg-gray-50">
+
+    <div id="centered-block" class="bg-white max-w-lg p-6 rounded-xl shadow-md">
+
+
+
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" >
+    
+            <div mat-card-avatar class="text-center">
+              <img [src]="contactForm.value.image" class="w-30 h-30 rounded-full">
+            </div>
+            <div class="text-center">
+            <mat-card-title>Edit contact</mat-card-title>
+        </div>
+    
+                <div id="name-cont">
+                    <mat-form-field>
+                        <mat-label>Nom</mat-label>
+                        <input matInput formControlName="nom" type="text" placeholder="nom" />
+                    </mat-form-field>
+                </div>
+
+                <div id="surname-cont">
+                    <mat-form-field>
+                        <mat-label>Prénom</mat-label>
+                        <input matInput formControlName="prenom" type="text" placeholder="prénom" />
+                    </mat-form-field>
+                </div>
+
+                <div id="email-cont">
+                    <mat-form-field>
+                        <mat-label>Adresse mail</mat-label>
+                        <input matInput formControlName="email" type="email" placeholder="email" />
+                    </mat-form-field>
+                </div>
+
+                <div id="tel-cont">
+                    <mat-form-field>
+                        <mat-label>Téléphone</mat-label>
+                        <input matInput formControlName="tel" type="tel" placeholder="tel" />
+                    </mat-form-field>
+                </div>
+              
+
+                <mat-card-actions>
+                    <button mat-raised-button type="submit">Save</button>
+                    <button mat-button (click)="onCancel()">Cancel</button>
+                </mat-card-actions>
+
+
+            </form>
+
+
+      
+
+    </div>
+</div>
+
+}

@@ -1,0 +1,37 @@
+<mat-sidenav-container>
+    <!-- 
+    variable template commence par '#' pour 
+    declencher le menu dans la fonction click 
+    -->
+    <mat-sidenav #sidenav mode="side">
+        <mat-nav-list>
+
+            @for (item of listMenu; track item.path) {
+
+                @if (item.data && item.data['isMenu']) { <!-- pour  avoir seulement certaines pages dans le menu de gauche  -->
+            <a mat-list-item [routerLink]="item.path">{{item.title}}</a>
+            }
+        }
+
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="flex flex-col h-screen">
+            <div id="div-toolbar">
+                <mat-toolbar>
+                    <button mat-icon-button (click)="sidenav.toggle()">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <span>
+                        {{title}}
+                    </span>
+                </mat-toolbar>
+            </div>
+            <!-- flex-1 pour div-router occupe la place qui reste -->
+            <div id="div-router" class="flex-1">
+                <router-outlet />
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
