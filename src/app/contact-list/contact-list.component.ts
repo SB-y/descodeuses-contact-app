@@ -72,11 +72,17 @@ export class ContactListComponent implements OnInit {
   }
 */
 
+/*
   sendEmail(id: number) {
     const index = this.contacts.findIndex(item => item.id == id);
     window.location.href = `mailto:${this.contacts[index].email}`;
     console.log(this.contacts[index].email)
+  }
+*/
 
+  sendEmail(email: string) {
+    window.location.href = `mailto:${email}`;
+    console.log(email)
   }
 
   openDialog(id: number) {

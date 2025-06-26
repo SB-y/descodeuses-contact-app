@@ -6,14 +6,14 @@ import { ContactDetailsComponent } from './contact-details/contact-details.compo
 export const routes: Routes = [
 
     {
-        path:'', 
+        path:'dashboard', 
         component: DashboardComponent, 
         title: 'Dashboard',
         data:{isMenu: true} // pour qu'il apparaisse dans le menu de gauche
     },
 
     {
-        path:'contact-list', 
+        path:'', 
         component: ContactListComponent,
         title: 'Contact',
         data:{isMenu: true} // pour qu'il apparaisse dans le menu de gauche

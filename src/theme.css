@@ -1,0 +1,4 @@
+:root {
+    --mat-sys-primary: light-dark(var(--color-cyan-700), var(--color-cyan-700));
+}
+
