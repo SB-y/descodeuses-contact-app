@@ -96,11 +96,13 @@ export class ContactDetailsComponent implements OnInit {
         // pour l'ajout d'un contact
         this.service.addContact(contact).subscribe(() => {
           this.snackBar.open('Nouveau contact ajouté', '', { duration: 1000 });
+          this.router.navigate(["/"]);
         });
       } else {
         // pour la mise à jour du contact
         this.service.updateContact(contact).subscribe(() => {
           this.snackBar.open('Contact mis à jour', '', { duration: 1000 });
+          this.router.navigate(["/"]);
         });
       }
     }
